@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/home/vagrant/maven/apache-maven-3.6.3/bin/mvn -B -DskipTests clean package'
+                sh '/home/vagrant/java/jdk1.8.0_281/bin/java /home/vagrant/maven/apache-maven-3.6.3/bin/mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
             steps {
-                sh '/home/vagrant/maven/apache-maven-3.6.3/bin/mvn test'
+                sh '/home/vagrant/java/jdk1.8.0_281/bin/java /home/vagrant/maven/apache-maven-3.6.3/bin/mvn test'
             }
             post {
                 always {
